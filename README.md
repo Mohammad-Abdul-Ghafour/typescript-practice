@@ -40,6 +40,8 @@ Here every time we want to write TS or edit we gonna rerun the **`tsc`** command
 
 > tsc the-file-name.ts -w
 
+---------------------------------------------------
+
 ### Define The Type Of Variables
 
 In TS we can define the type of variable so we make it strict to the type of data, and how we do that ?
@@ -63,6 +65,8 @@ console.log(circ(7.5));
 ```
 
 here we tells TS that **`diameter`** is strict to **`number`** type of data.
+
+---------------------------------------------------
 
 ### Arrays Data Type
 
@@ -105,6 +109,8 @@ array = ""
 
 here we can't change the variable *`array`* from array type to string type.
 
+---------------------------------------------------
+
 ### Object Data Type
 
 **`Objects`** in TS are the same if we declared a property to a specific type then we can't change that type.
@@ -133,6 +139,96 @@ let person = {
 
 // person.skills = []; // We can't add new property to the object in TS
 ```
+
+---------------------------------------------------
+
+### Explicit Type Without Initial Value
+
+1. **`Variables`**
+
+    Sometimes we need to give a variable a type without giving it an initial value.
+
+    We can do that by explicitly giving the variable a type, how we can do that ?
+
+    ```typescript
+    let name : string;
+    let age : number;
+    let islogedin : boolean;
+    // Now we gives those variables types and in the future they well not accept a deferent types
+    ```
+
+2. **`Arrays`**
+
+    Also in arrays we need to declare an array without giving it a values and same as variables we can give it a type before initiate the array, how ?
+
+    ```typescript
+    let firstArray : string[];
+    let secondArray : number[];
+    ```
+
+    But here we have a note that we can't use push method on the array, why ? simple because at this point we just said that's the type of the array but we didn't initiate it, so what we can do is to give it an initial value as empty array.
+
+    **`NOTE`** : If you used the push method on array before initiate it will not give you an error in the text editor but in the inspect it will.
+
+    ```typescript
+    let firstArray : string[] = [];
+    let secondArray : number[] = [];
+    // Now we can use the push method
+    secondArray.push(30);
+    ```
+
+3. **`Objects`**
+
+    So how we can explicitly declare a variable as an object ? simply we can do as the following
+
+    ```typescript
+    let person : object;
+    person = {
+      name:"Mohammad",
+      age:29,
+    }
+    ```
+
+    **`NOTE`** : Here we can declare the object persons as an array because the array is kind of an object
+
+    ```typescript
+    let person : object;
+    person = []
+    // This would work
+    ```
+
+    So if we need to be more specific when declaring an object we can do that.
+
+    ```typescript
+    let person : {
+      name:string,
+      age:number,
+      islogedin:boolean,
+    };
+    person = {name:"Mohammad",age:29,islogedin:true}
+    ```
+
+4. **`Union Types`**
+
+    Sometimes we need to give a **`variable`** multiple types, how to do that ?
+
+    ```typescript
+    let name : string | number;
+    let age : number | string | boolean;
+    let logedin : boolean | number;
+    // Now we gives those variables multiple types
+    ```
+
+    We call that **`Union Types`**
+
+    And for sure we can give the **`arrays`** **`Union Types`** as the **`variable`**, the only deference that the types should be in **`tuple`** and in front of it a square brackets.
+
+    ```typescript
+    let firstArray : (string | number)[] = [];
+    let secondArray : (number | boolean)[] = [];
+    ```
+
+---------------------------------------------------
 
 ## NOTES
 

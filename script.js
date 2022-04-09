@@ -58,3 +58,41 @@ person = {
     name: "Ahmad",
     age: 40
 };
+// -------------------------------
+//         Explicit Types
+// -------------------------------
+// Variables
+var sureName;
+var height;
+// sureName = 30;
+sureName = "Abdul Ghafour";
+height = 185;
+// Arrays
+var firstArray;
+// firstArray.push("Mohammad");
+// firstArray = [30];
+firstArray = ["Mohammad"];
+firstArray.push("Ahmad");
+var secondArray = [];
+secondArray.push(30);
+// secondArray = ["Mohammad"]
+// Objects
+var firsObject;
+firsObject = { name: "Mohammad", age: 29 };
+firsObject = [];
+var secondObject;
+secondObject = { name: "Mohammad", age: 29 };
+// secondObject = []
+// Union Types
+var unionVariable;
+unionVariable = "Mohammad";
+unionVariable = 29;
+var unionArray;
+unionArray = ["Mohammad", 29];
+var firstUnionObject;
+firstUnionObject = "Mohammad";
+firstUnionObject = {};
+var secondUnionObject;
+secondUnionObject = { name: "Mohammad", age: 29 };
+secondUnionObject = { name: 29, age: false };
+// secondUnionObject = "Mohammad"

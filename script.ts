@@ -82,3 +82,70 @@ person = {
   age : 40,
   // skills : []
 };
+
+// -------------------------------
+//         Explicit Types
+// -------------------------------
+
+// Variables
+
+let sureName : string;
+let height : number;
+
+// sureName = 30;
+sureName = "Abdul Ghafour"
+height = 185;
+
+// Arrays
+
+let firstArray : string[];
+
+// firstArray.push("Mohammad");
+// firstArray = [30];
+firstArray = ["Mohammad"];
+firstArray.push("Ahmad");
+
+let secondArray : number[] = [];
+
+secondArray.push(30);
+// secondArray = ["Mohammad"]
+
+// Objects
+
+let firsObject : object;
+
+firsObject = {name:"Mohammad",age:29};
+firsObject = [];
+
+let secondObject : {
+  name:string,
+  age:number
+};
+
+secondObject = {name:"Mohammad",age:29};
+// secondObject = []
+
+// Union Types
+
+let unionVariable : string | number;
+
+unionVariable = "Mohammad";
+unionVariable = 29;
+
+let unionArray : (string|number)[];
+
+unionArray = ["Mohammad",29];
+
+let firstUnionObject : object|string;
+
+firstUnionObject = "Mohammad";
+firstUnionObject = {};
+
+let secondUnionObject : {
+  name:string|number,
+  age:number|boolean
+};
+
+secondUnionObject = {name:"Mohammad",age:29}
+secondUnionObject = {name:29,age:false}
+// secondUnionObject = "Mohammad"
