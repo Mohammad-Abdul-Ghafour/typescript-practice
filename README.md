@@ -227,6 +227,30 @@ let person = {
     let firstArray : (string | number)[] = [];
     let secondArray : (number | boolean)[] = [];
     ```
+5. **`Dynamic (any) Types`**
+
+Sometimes in a **`rare situation`** you may need to declare a variable or array even an object with dynamic type where the value type can be any type, although that is not recommended but yes we can do that using **`any`** to declare the type e.g :
+
+```typescript
+// Variables
+let name : any; // Here we tell typescript that this variable could be any type in the future and can be changed
+name = "Mohammad";
+name = 25;
+name = true;
+
+// Arrays
+let array : any[] = []; // Here we tell typescript that this array could contain any type (string,number,boolean)
+array.push("Mohammad");
+array.push(29);
+array.push(false);
+
+// Objects
+let object : {name:any,age:any}; // Here we tell typescript that this object attributes can be any type
+object = {name:"Mohammad",age:29};
+object = {name:29,age:"Mohammad"};
+```
+
+But as we said thats not recommended because TS found explicitly give each variable a type so you get code with lesser errors.
 
 ---------------------------------------------------
 

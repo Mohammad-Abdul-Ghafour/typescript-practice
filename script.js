@@ -96,3 +96,21 @@ var secondUnionObject;
 secondUnionObject = { name: "Mohammad", age: 29 };
 secondUnionObject = { name: 29, age: false };
 // secondUnionObject = "Mohammad"
+// Any Type
+var anyVariable;
+anyVariable = "Mohammad";
+console.log(anyVariable);
+anyVariable = 29;
+console.log(anyVariable);
+anyVariable = true;
+console.log(anyVariable);
+var anyArray = [];
+anyArray.push(29);
+anyArray.push(true);
+anyArray.push("Mohammad");
+console.log(anyArray);
+var anyObject;
+anyObject = { name: "Mohammad", age: 29 };
+console.log(anyObject);
+anyObject = { name: 29, age: "Mohammad" };
+console.log(anyObject);
