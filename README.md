@@ -254,6 +254,20 @@ But as we said thats not recommended because TS found explicitly give each varia
 
 ---------------------------------------------------
 
+## TS Config File (tsconfig.json)
+
+Sometimes we need to change the behavior of TS like where should the TS look for files to compile and where the out put JS should be stored.
+
+To do that first we have to get the **`tsconfig.json`** file and to do that just run the following in your terminal.
+
+> tsc --init
+
+And now you should see **`tsconfig.json`** in your project.
+
+Now there are many configs that we can control as we need, you can read about them in [TS docs](https://www.typescriptlang.org/tsconfig) .
+
+---------------------------------------------------
+
 ## NOTES
 
 * Browsers by default do not understands TS so we have to compile it to JS ( most cases it's very easy to compile it down to JS and it comes with a load of extra features ).
