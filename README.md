@@ -166,7 +166,7 @@ let person = {
     let secondArray : number[];
     ```
 
-    But here we have a note that we can't use push method on the array, why ? simple because at this point we just said that's the type of the array but we didn't initiate it, so what we can do is to give it an initial value as empty array.
+    But here we have a note that we can't use push method on the array, why ? simply because at this point we just said that's the type of the array but we didn't initiate it, so what we can do is to give it an initial value as empty array.
 
     **`NOTE`** : If you used the push method on array before initiate it will not give you an error in the text editor but in the inspect it will.
 
@@ -227,30 +227,113 @@ let person = {
     let firstArray : (string | number)[] = [];
     let secondArray : (number | boolean)[] = [];
     ```
+
 5. **`Dynamic (any) Types`**
 
-Sometimes in a **`rare situation`** you may need to declare a variable or array even an object with dynamic type where the value type can be any type, although that is not recommended but yes we can do that using **`any`** to declare the type e.g :
+    Sometimes in a **`rare situation`** you may need to declare a variable or array even an object with dynamic type where the value type can be any type, although that is not recommended but yes we can do that using **`any`** to declare the type e.g :
 
-```typescript
-// Variables
-let name : any; // Here we tell typescript that this variable could be any type in the future and can be changed
-name = "Mohammad";
-name = 25;
-name = true;
+    ```typescript
+    // Variables
+    let name : any; // Here we tell typescript that this variable could be any type in the future and can be changed
+    name = "Mohammad";
+    name = 25;
+    name = true;
+    
+    // Arrays
+    let array : any[] = []; // Here we tell typescript that this array could contain any type (string,number,boolean)
+    array.push("Mohammad");
+    array.push(29);
+    array.push(false);
+    
+    // Objects
+    let object : {name:any,age:any}; // Here we tell typescript that this object attributes can be any type
+    object = {name:"Mohammad",age:29};
+    object = {name:29,age:"Mohammad"};
+    ```
 
-// Arrays
-let array : any[] = []; // Here we tell typescript that this array could contain any type (string,number,boolean)
-array.push("Mohammad");
-array.push(29);
-array.push(false);
+    But as we said thats not recommended because TS found explicitly give each variable a type so you get code with lesser errors.
 
-// Objects
-let object : {name:any,age:any}; // Here we tell typescript that this object attributes can be any type
-object = {name:"Mohammad",age:29};
-object = {name:29,age:"Mohammad"};
-```
+6. **`Function Type`**
 
-But as we said thats not recommended because TS found explicitly give each variable a type so you get code with lesser errors.
+    **`6.1.`** Function and Parameters type :
+
+    In TS when we declare a variable as function, TS infers that this variable is a function type.
+
+    ```typescript
+    let greet = () => {
+      console.log("Welcome");
+    };
+    // greet = "Hello" // It is a function type and can't be changed
+    ```
+
+    But What if we need to just declare a variable as a function type without giving it a value ?
+
+    Simply we declare the variable and set the type to **`Function`** with capital **`F`** .
+
+    ```typescript
+    let greet : Function;
+    ```
+
+    Now how to give the function parameters a type ?
+
+    ```typescript
+    let add = (a:number,b:number) => {
+      console.log(a+b);
+    };
+    add(5,10);
+    ```
+
+    For sure we can use Union Types in function parameters.
+
+    And we can pass an optional argument by putting a question mark **`?`** after the argument naming.
+
+    ```typescript
+    let add = (a:number,b:number, c?:number|string) => {
+      console.log(a+b);
+      console.log(c);
+    };
+    add(5,10);
+    add(5,10,15);
+    ```
+
+    **`NOTE`** : Always put the optional parameters after the required parameters.
+
+    Here if we did not pass a value for the third argument it will be **`undefined`**, or we if don't want to have undefined we can give the argument a default value.
+
+    ```typescript
+    let add = (a:number,b:number, c:number|string = 10) => {
+      console.log(a+b);
+      console.log(c);
+    };
+    add(5,10);
+    add(5,10,15);
+    ```
+
+    **`NOTE`** : If you put a default value for an optional variable there is no need for the question mark **`?`**.
+
+    **`6.2.`** Return Type :
+
+    Functions always return something even if we don't return any thing inside it, in JS it will return undefined, but in TS there is a **`void`** type which is a lack of any kind of type and when it will be compiled into JS it will be undefined.
+
+    How we can explicitly give the function a type to return ? simply we add a colon after the function parentheses and set the type we need this function to return.
+
+    ```typescript
+    let add = (a:number,b:number) : number => {
+      return a+b;
+    };
+    add(5,10);
+    ```
+
+    But in most cases we don't need to specify the return type because TS by default detect the type of the value that should be returned.
+
+    Also we can set the function to void type to tell that this function return nothing.
+
+    ```typescript
+    let add = (a:number,b:number): void => {
+      console.log(a+b);
+      console.log(c);
+    };
+    ```
 
 ---------------------------------------------------
 

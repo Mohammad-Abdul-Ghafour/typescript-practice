@@ -176,4 +176,47 @@ anyObject = {name:29,age:"Mohammad"};
 console.log(anyObject);
 
 
-console.log("hello");
+// Functions
+
+let firstGreet = () => {
+  console.log("Welcome");
+};
+
+// firstGreet = "Welcome"
+firstGreet();
+
+let secondGreet : Function;
+
+secondGreet = () => {
+  console.log("Welcome");
+};
+
+secondGreet();
+
+const firstAdd = (a:number,b:number) => {
+  console.log(a+b);
+};
+
+firstAdd(10,5);
+
+const secondAdd = (a:number,b:number,c?:number|string) => {
+  console.log(a+b);
+  console.log(c);
+}
+
+secondAdd(10,5);
+secondAdd(10,5,20);
+
+const thirdAdd = (a:number,b:number,c:number|string =10) : void => {
+  console.log(a+b);
+  console.log(c);
+}
+
+thirdAdd(10,5);
+thirdAdd(10,5,20);
+
+const forthAdd = (a:number,b:number) : number => {
+  return a+b;
+}
+
+let result = forthAdd(10,5);

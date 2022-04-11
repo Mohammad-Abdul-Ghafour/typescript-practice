@@ -116,4 +116,34 @@ anyObject = { name: "Mohammad", age: 29 };
 console.log(anyObject);
 anyObject = { name: 29, age: "Mohammad" };
 console.log(anyObject);
-console.log("hello");
+// Functions
+let firstGreet = () => {
+    console.log("Welcome");
+};
+// firstGreet = "Welcome"
+firstGreet();
+let secondGreet;
+secondGreet = () => {
+    console.log("Welcome");
+};
+secondGreet();
+const firstAdd = (a, b) => {
+    console.log(a + b);
+};
+firstAdd(10, 5);
+const secondAdd = (a, b, c) => {
+    console.log(a + b);
+    console.log(c);
+};
+secondAdd(10, 5);
+secondAdd(10, 5, 20);
+const thirdAdd = (a, b, c = 10) => {
+    console.log(a + b);
+    console.log(c);
+};
+thirdAdd(10, 5);
+thirdAdd(10, 5, 20);
+const forthAdd = (a, b) => {
+    return a + b;
+};
+let result = forthAdd(10, 5);
