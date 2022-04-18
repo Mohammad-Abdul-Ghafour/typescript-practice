@@ -335,6 +335,29 @@ let person = {
     };
     ```
 
+7. **`Aliases Type`**
+
+    Sometimes we write a complex types and we use them in many deferent positions. e.g
+
+    ```typescript
+    let greet = (user: {name: string, uid: string|number}){
+      console.log(`Hello ${user.name}`);
+    };
+    ``` 
+
+    In this case we may repeat the **`user`** type many times, so what we can do is to create or alias type where we define a type once and use it whenever we need it. e.g
+
+    ```typescript
+    type strOrNum = string|number;
+    type userObj = {name:string,uid:strOrNum};
+
+    let greet = (user: userObj ){
+      console.log(`Hello ${user.name}`);
+    };
+    ```
+
+    Now we make less code and didn't repeat ourself.
+
 ---------------------------------------------------
 
 ## TS Config File (tsconfig.json)

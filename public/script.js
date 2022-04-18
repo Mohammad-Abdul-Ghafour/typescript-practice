@@ -147,3 +147,11 @@ const forthAdd = (a, b) => {
     return a + b;
 };
 let result = forthAdd(10, 5);
+let firstAlias = (user) => {
+    console.log(`Hello ${user.name}`);
+};
+firstAlias({ name: "Mohammad", uid: 29 });
+let secondAlias = (user) => {
+    console.log(`Hello Again ${user.name}`);
+};
+secondAlias({ name: "Mohammad", uid: 29 });

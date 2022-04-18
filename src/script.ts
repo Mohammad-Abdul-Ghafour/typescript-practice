@@ -220,3 +220,20 @@ const forthAdd = (a:number,b:number) : number => {
 }
 
 let result = forthAdd(10,5);
+
+// Aliases Type
+
+type strOrNum = string|number;
+type userObj = {name:string,uid:strOrNum};
+
+let firstAlias = (user : userObj) => {
+  console.log(`Hello ${user.name}`);
+}
+
+firstAlias({name:"Mohammad",uid:29});
+
+let secondAlias = (user : userObj) => {
+  console.log(`Hello Again ${user.name}`);
+}
+
+secondAlias({name:"Mohammad",uid:29});
