@@ -221,6 +221,20 @@ const forthAdd = (a:number,b:number) : number => {
 
 let result = forthAdd(10,5);
 
+// Functions Signatures
+
+let funcSign : (a:number,b:number,c?:string) => number;
+
+funcSign = (numOne,numTow,action) => {
+  if (action === "add"){
+    return numOne+numTow;
+  }else{
+    return numOne-numTow
+  }
+};
+
+console.log(funcSign(2,3,"add"));
+
 // Aliases Type
 
 type strOrNum = string|number;

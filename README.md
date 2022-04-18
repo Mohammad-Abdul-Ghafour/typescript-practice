@@ -335,6 +335,23 @@ let person = {
     };
     ```
 
+    6.3 **`Functions Signatures`**
+
+    We said before that we can explicitly set a Function type, but also we can define the signature of that function.
+
+    ```typescript
+    let funcSign : (a:number,b:number,c?:string) => number;
+
+    funcSign = (numOne:number,numTow,action) => {
+      if (action === "add"){
+        return numOne+numTow;
+      }else{
+        return numOne-numTow
+      }
+    };
+    funcSign(2,3)
+    ```
+
 7. **`Aliases Type`**
 
     Sometimes we write a complex types and we use them in many deferent positions. e.g

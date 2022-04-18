@@ -147,6 +147,17 @@ const forthAdd = (a, b) => {
     return a + b;
 };
 let result = forthAdd(10, 5);
+// Functions Signatures
+let funcSign;
+funcSign = (numOne, numTow, action) => {
+    if (action === "add") {
+        return numOne + numTow;
+    }
+    else {
+        return numOne - numTow;
+    }
+};
+console.log(funcSign(2, 3, "add"));
 let firstAlias = (user) => {
     console.log(`Hello ${user.name}`);
 };
