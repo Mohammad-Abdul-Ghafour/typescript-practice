@@ -375,6 +375,43 @@ let person = {
 
     Now we make less code and didn't repeat ourself.
 
+8. **`DOM & Type Casting`**
+
+    For sure in TS we can use DOM just like JS, but also there are some new things, like what ?
+
+    ```typescript
+    const anchor = document.querySelector('a');
+    ```
+
+    Let's say we have this **`querySelector`** in this case if we tried to log the anchor it will work normally, but if we needed to get to it's attributes, TS will give us error because TS will expect this anchor to be **`HTMLAnchorElement`** or **`null`** so how to solve this ? we have two way.
+
+    The first way is to put if statement:
+
+    ```typescript
+    const anchor = document.querySelector('a');
+    if(anchor) {
+      console.log(anchor.href);
+    }
+    ```
+
+    The seconde way is to use **`!`** at the end of the **`querySelector`** and in this way we tell TS that we are sure that this will never be **`null`** :
+
+    ```typescript
+    const anchor = document.querySelector('a')!;
+    console.log(anchor.href);
+    ```
+
+    **`NOTE`** : TS by default knows the type of the HTML element we are selecting (HTMLAnchorElement,HTMLInputElement ... etc), but what if we selected a class or id ?
+
+    In TS we can **`Type Casting`** the element e.g:
+
+    ```typescript
+    const anchor = document.querySelector('.input') as HTMLAnchorElement;
+    console.log(anchor.href);
+    ```
+
+    And here we don't have to use if statements or **`!`** because using **`as`** tells TS that for sure this is not **`null`**.
+
 ---------------------------------------------------
 
 ## TS Config File (tsconfig.json)

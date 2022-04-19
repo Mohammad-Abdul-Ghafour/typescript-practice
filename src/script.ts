@@ -251,3 +251,13 @@ let secondAlias = (user : userObj) => {
 }
 
 secondAlias({name:"Mohammad",uid:29});
+
+// DOM & Type Casting
+
+const anchor = document.querySelector('a')!;
+if(anchor) {
+  console.log(anchor.href);
+}
+console.log(anchor.href);
+
+//const form = document.querySelector('form')!;
