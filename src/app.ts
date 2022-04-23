@@ -1,12 +1,9 @@
 class Invoice {
-    client : string;
-    details : string;
-    amount : number
-
-    constructor(client:string,details:string,amount:number){
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
+    constructor(
+        readonly client:string,
+        private details:string,
+        public amount:number
+    ){
     }
 
     format(){

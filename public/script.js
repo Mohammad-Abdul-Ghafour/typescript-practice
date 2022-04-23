@@ -173,3 +173,22 @@ if (anchor) {
 }
 console.log(anchor.href);
 //const form = document.querySelector('form')!;
+// Classes
+class InvoiceTest {
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+const invOneTest = new Invoice("Mohammad", "Work On The Website", 250);
+const invTwoTest = new Invoice("Ahmad", "Work On The Website", 300);
+console.log(invOne, invTwo);
+const invoicesTest = [];
+invOne.amount = 500; // In the future we gonna make it unchangeable
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);

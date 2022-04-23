@@ -412,6 +412,37 @@ let person = {
 
     And here we don't have to use if statements or **`!`** because using **`as`** tells TS that for sure this is not **`null`**.
 
+9. **`Classes`**
+    **`Classes`** in Ts the same as in JS, but we have new things like **`Access Modifiers`**.
+
+    9.1. **`public Access Modifier`**
+        That makes the variable accessible inside and outside the class.
+
+    9.2. **`private Access Modifier`**
+        That makes the variable accessible only inside the class.
+
+    9.3. **`readonly Access Modifier`**
+        That makes the variable accessible inside and outside the class but can't be changed.
+
+    And adding these modifiers to the constructor allow us to declare the variables in the constructor arguments without using *`this`* to declare them. e.g
+
+    ```typescript
+    class Invoice {
+    constructor(
+        readonly client:string,
+        private details:string,
+        public amount:number
+    ){} // We don't have to use this to declare the variables
+
+    format(){
+        return `${this.client} owes $${this.amount} for ${this.details}`
+    }
+    }
+
+    const invOne = new Invoice("Mohammad","Work On The Website",250);
+    console.log(invOne);
+    ```
+
 ---------------------------------------------------
 
 ## TS Config File (tsconfig.json)
@@ -437,3 +468,5 @@ Now there are many configs that we can control as we need, you can read about th
 * TypeScript checks a program for errors before execution, and does so based on the kinds of values, it’s a static type checker.
 
 * After we compiled the TS file if we opened the TS and JS file at the same time it might gave you an error line in the TS file, don't worry that maybe because of a conflict between the tow file but if you closed the JS file the errors should be gone.
+
+* We can access variables from other TS file if it's script called first in the HTML file.
